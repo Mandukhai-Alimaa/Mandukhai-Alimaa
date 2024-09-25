@@ -1,38 +1,523 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  position: relative; /* Ensure proper positioning of the nav */
+}
+
+.name h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.nav {
+  display: flex; /* Flex layout for desktop */
+  align-items: center; /* Center items in the nav */
+}
+
+.nav-links {
+  display: flex; /* Display flex for horizontal alignment */
+  list-style: none; /* Remove default list styling */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+.nav-links li {
+  margin-left: 20px; /* Space between items */
+}
+
+.nav-links a {
+  color: #ffffff; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold; /* Bold links */
+}
+
+.menu-toggle {
+  display: none; /* Hide the button by default */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem; /* Size of the hamburger icon */
+  cursor: pointer; /* Change cursor on hover */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.round-image {
+  width: 200px; /* Set the width */
+  height: 200px; /* Set the height */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image covers the entire area */
+}
+
+.text-above-round-img {
+  margin-bottom: 35px; /* Space between the text and the image */
+  margin-top: 230px;
+  font-size: 50px; /* Font size */
+  text-align: center; /* Center text */
+  color: #333; /* Text color */
+  line-height: 1.5; /* Line height for readability */
+}
+
+.text-below-round-img {
+  margin-top: 35px; /* Space between the image and the text */
+  font-size: 20px; /* Font size */
+  text-align: center; /* Center text */
+  color: #333; /* Text color */
+  line-height: 1.5; /* Line height for readability */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Start hidden */
+      transform: translateY(20px); /* Slide in from below */
+  }
+  to {
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* Original position */
+  }
+}
+
+.text-above-round-img,
+.round-image,
+.text-below-round-img {
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 0.5s forwards; /* Use 'forwards' to maintain the final state */
+}
+
+.text-above-round-img {
+  animation-delay: 0.0s; /* Delay for first element */
+  animation-fill-mode: forwards; /* Maintain final state */
+}
+
+.round-image {
+  animation-delay: 0.5s; /* Delay for second element */
+  animation-fill-mode: forwards; /* Maintain final state */
+}
+
+.text-below-round-img {
+  animation-delay: 1.0s; /* Delay for third element */
+  animation-fill-mode: forwards; /* Maintain final state */
+}
+
+
+
+
+.resume-banner {
+  position: relative;
+  background-color: #DDD; /* Light background color */
+  padding: 20px; /* Add some padding */
+  margin-top: 330px !important;
+  text-align: center; /* Center text */
+  margin: 20px auto; /* Center the banner horizontally */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%; /* Set a specific width, can adjust as needed */
+  height: 250px;
+}
+
+#resume-in-banner {
+  margin-top: 50px;
+}
+
+.resume-text-in-banner {
+  margin-top: 50px;
+}
+
+.resume-button {
+  display: inline-block; /* Make it behave like a button */
+  padding: 10px 20px; /* Add padding */
+  background-color: #333; /* Button background color */
+  color: white; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+  margin-top: 20px;
+}
+
+.resume-button:hover {
+  background-color: #8F8F8F; /* Darker blue on hover */
+}
+
+.section-header {
+  margin-top: 50px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.projects-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: space-around; /* Space out the cards evenly */
+  align-items: flex-start; /* Align items to the top */
+  margin: 20px; /* Margin around the container */
+  padding: 10px; /* Optional: add padding inside the container */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.card {
+  width: calc(33.33% - 40px); /* Use percentage for responsive width */
+  max-width: 500px; /* Limit max width to avoid overly wide cards */
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px; /* Smaller margin to accommodate more cards */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%; /* Full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image-container .card-image {
+  transform: scale(1.2);
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.project-title {
+  text-align: center !important;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover .overlay,
+.card-paragraph:hover ~ .overlay {
+  opacity: 1; /* Show overlay when hovering over the card or paragraph */
+}
+
+.card-paragraph {
+  padding: 15px;
+  font-size: 16px;
+  color: #666;
+  max-width: 100%;
+  text-align: center;
+
+  /* Limit description to approximately 4 lines */
+  max-height: 90px; /* This limits to approximately 4 lines */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Show ellipsis for hidden text */
+
+  /* Smooth transition for height and opacity */
+  transition: max-height 0.5s ease-in-out;
+}
+
+.card:hover .card-paragraph {
+  max-height: 300px; /* Allow expansion to full text */
+}
+
+.card:not(:hover) .card-paragraph {
+  max-height: 95px; /* Restrict height when not hovering */
+}
+
+.course-container {
+  text-align: center; /* Center align text */
+  padding: 20px; /* Padding around the course container */
+}
+
+.course-name {
+  font-size: 20px; /* Font size for course name */
+  margin-bottom: 10px; /* Space below course name */
+}
+
+.line-container {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  margin: 20px 0; /* Space above and below the line */
+}
+
+.line {
+  width: 170px; /* Width of the line */
+  height: 2px; /* Height of the line */
+  background-color: #333; /* Color of the line */
+}
+
+.course-logo {
+  width: 50px; /* Logo width */
+  height: 50px; /* Logo height */
+  border-radius: 50%; /* Make logo circular */
+  object-fit: cover; /* Ensure logo fits within the circle */
+}
+
+.course-description {
+  font-size: 16px; /* Font size for description */
+  color: #666; /* Color for description text */
+  max-width: 600px; /* Max width of the description */
+  margin: 0 auto; /* Center the description */
+}
+
+.courses-container {
+  display: flex; /* Align course items side by side */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center items */
+  gap: 20px; /* Space between course items */
+  margin: 20px 0; /* Margin for top and bottom spacing */
+  width: 100%; /* Optional: Ensure full width of the parent */
+}
+
+.recommendation-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.recommendation-content {
+  margin-top: 30px;
+  width: 600px; /* Adjust width for the content */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+}
+
+.recommendation-img {
+  width: auto;
+  height: 800px; /* Paper size */
+  object-fit: contain;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.left {
+  left: -40px;
+}
+
+.right {
+  right: -40px;
+}
+
+.carousel-button:hover {
+  color: #000;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.footer-banner {
+  background-color: #333; /* Dark background color */
+  color: white; /* White text color */
+  padding: 20px; /* Padding around the content */
+  text-align: center; /* Center align text */
+  width: 100%; /* Full width */
+  margin-top: 80px;
+}
+
+.footer-content {
+  max-width: 1200px; /* Max width for the content */
+  margin: 0 auto; /* Center horizontally */
+}
+
+#contact-me-text {
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-bottom: 20px; /* Space below contact info */
+}
+
+.social-links {
+  display: flex; /* Flexbox for icons */
+  justify-content: center; /* Center align social icons */
+  margin-top: 10px; /* Space above social links */
+}
+
+.social-logo {
+  width: 30px; /* Logo size */
+  height: 30px; /* Logo size */
+  margin: 0 30px; /* Horizontal margin to create space between logos */
+}
+
+.copyright {
+  margin-top: 20px; /* Space above the copyright */
+  font-size: 14px; /* Font size for copyright */
+  color: #ccc; /* Light color for copyright */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 810px) {
+  .nav {
+    flex-direction: column; /* Stack items vertically */
+    max-height: 0; /* Start with a height of 0 */
+    overflow: hidden; /* Hide overflow */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Start with 0 opacity */
+    background-color: #333; /* Background color for the menu */
+    position: absolute; /* Position the menu */
+    top: 60px; /* Adjust as needed */
+    right: 0; /* Align to the right */
+    width: 100%; /* Full width of the menu */
+    z-index: 10; /* Ensure it appears on top */
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav.open {
+    max-height: 500px; /* Set a reasonable max height when open */
+    opacity: 1; /* Set to full opacity when open */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the button on mobile */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    padding: 10px 0; /* Space for padding */
+  }
+
+  .nav-links li {
+    margin: 10px 0; /* Space between items */
+    text-align: center; /* Center align the text */
+  }
+
+  .card-paragraph {
+    max-height: none !important; /* Allow full height */
+    overflow: visible !important; /* Ensure all text is visible */
+    transition: none !important; /* Disable transition for small screens */
+    padding: 10px !important; /* Optionally adjust padding for smaller screens */
+    font-size: 18px !important; /* Optionally adjust font size for readability */
+  }
+  .resume-banner {
+    margin-top: 70px !important;
+  }
+  .recommendation-img {
+    width: 400px !important;
+    height: 500px !important;
+    box-shadow: none;
+  }
+  .recommendation-carousel {
+    max-width: 300px !important;
+  }
+  .recommendation-content {
+    max-width: 300px !important;
+    height: 400px !important;
+  }
+  .projects-card {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center align items */
+    margin: 0; /* Remove margin to avoid side overflow */
+  }
+
+  .card {
+      width: 100%; /* Make cards full width in small spaces */
+      max-width: none; /* Remove max width restriction */
+      margin: 10px 0; /* Add margin above and below each card */
+  }
+
+  .card:hover .image-container .card-image {
+    transform: none;
+  }
+
+  .card {
+    margin-top: 40px;
   }
 }
+
+
+@media (max-width: 1050px) {
+  .card-paragraph {
+    max-height: none !important; /* Allow full height */
+    overflow: visible !important; /* Ensure all text is visible */
+    transition: none !important; /* Disable transition for small screens */
+    padding: 10px !important; /* Optionally adjust padding for smaller screens */
+    font-size: 18px !important; /* Optionally adjust font size for readability */
+  }
+  .projects-card {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center align items */
+    margin: 0; /* Remove margin to avoid side overflow */
+  }
+
+  .card {
+      width: 80%; /* Make cards full width in small spaces */
+      max-width: none; /* Remove max width restriction */
+      margin: 10px 0; /* Add margin above and below each card */
+  }
+  .card:hover .image-container .card-image {
+    transform: none;
+  }
+  .card {
+    margin-top: 60px;
+  }
+
+}
+
+
