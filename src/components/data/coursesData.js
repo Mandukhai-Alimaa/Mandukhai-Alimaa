@@ -23,17 +23,17 @@ const coursesData = [
     {
         courseName: "CSS 506: Software Development Processes".toUpperCase(),
         courseDescription: "Provides a foundation in software engineering processes, methods and practices associated with prescriptive and agile software process models. Includes the creation of artifacts commonly used to communicate, justify, and manage computing projects.",
-        logoSrc: `${process.env.PUBLIC_URL}/Uwash-logo.jpeg`,
+        logoSrc: `${process.env.PUBLIC_URL}/UWash-logo.jpeg`,
     },
     {
         courseName: "CSS 502: Data Structures and Object-oriented Programming 2".toUpperCase(),
         courseDescription: "Covers advanced data structures included trees, balanced trees, heaps, graphs, and hash tables along with associated algorithms. Covers object-oriented programming with a focus on design and implementation of programs using inheritance and polymorphism. Introduces formal automata theory.",
-        logoSrc: `${process.env.PUBLIC_URL}/Uwash-logo.jpeg`,
+        logoSrc: `${process.env.PUBLIC_URL}/UWash-logo.jpeg`,
     },
     {
         courseName: "CSS 501: Data Structures and Object-oriented Programming 1".toUpperCase(),
         courseDescription: "Covers data structures and object-oriented programming. Studies basic and advanced data types, their uses, and implementations. Students design solutions to programming problems using object-oriented techniques with various data types. Covers algorithms and their tradeoffs. Uses modern software engineering practices.",
-        logoSrc: `${process.env.PUBLIC_URL}/Uwash-logo.jpeg`,
+        logoSrc: `${process.env.PUBLIC_URL}/UWash-logo.jpeg`,
     },
     {
         courseName: "CSS 307: Introduction to Cybersecurity".toUpperCase(),
